@@ -3,14 +3,14 @@
 # define variables
 PROJECT_NAME=${PWD##*/}
 BUILD_DIR="./build"
-INCLUDE_IN_BUILD="./assets"
+INCLUDE_IN_BUILD=""
 
 # compilation targets
 args_linux86_64()
 {
     ARCHITECTURE="linux-86_64"
     COMPILER="/bin/gcc"
-    ARGS="-lSDL2"
+    ARGS=""
     FILE_EXSTENSION=""
 }
 
@@ -18,8 +18,7 @@ args_win86-64()
 {
     ARCHITECTURE="win-86_64"
     COMPILER="/usr/bin/x86_64-w64-mingw32-gcc"
-    ARGS="-lmingw32 -lSDL2main -lSDL2 -mwindows"
-    INCLUDE_IN_BUILD="$INCLUDE_IN_BUILD /usr/x86_64-w64-mingw32/bin/SDL2.dll"
+    ARGS="-lmingw32 -mwindows"
     FILE_EXSTENSION=".exe"
 }
 
